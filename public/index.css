@@ -1,6 +1,21 @@
 body {
   background-color: black;
+  font-family: monospace;
 }
 p {
  color: white;
 }
+input {
+  background-color: black;
+  color: white;
+  border: None;
+}
+input[type=text]:focus{
+  outline: none;
+  caret-width: 10px;
+}
+label {
+  display: inline-block;
+  text-align: right;
+  color: white;
+}​
