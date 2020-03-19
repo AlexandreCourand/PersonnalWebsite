@@ -6,15 +6,30 @@
 </head>
 <body>
 
-<p id=history>
-  Welcome to my personnal website
-  type /help to see the command available
-</p>
-
 <div class="block">
+
+  <div id=history>
+    Welcome to my personnal website
+    type /help to see the command available <br /><br />
+  </div>
+
   <label>command> </label>
   <input type="text" id="input" onblur="this.focus()" autofocus />
 </div>
 
 </body>
+<script>
+
+  var inputText = document.getElementById("input");
+
+  inputText.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        if (e.target.value == "/help" ) {
+          var child = document.getElementById('history');
+          child.innerHTML += "command> " + e.target.value + "<br />";
+        }
+    }
+});
+
+</script>
 </html>

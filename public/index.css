@@ -1,14 +1,17 @@
 body {
   background-color: black;
   font-family: monospace;
+  cursor: default;
 }
-p {
+div {
  color: white;
 }
 input {
   background-color: black;
   color: white;
   border: None;
+  cursor: default;
+  font-family: monospace;
 }
 input[type=text]:focus{
   outline: none;
