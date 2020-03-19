@@ -13,7 +13,7 @@
     type /help to see the command available <br /><br />
   </div>
 
-  <label>command> </label>
+  <label>command></label>
   <input type="text" id="input" onblur="this.focus()" autofocus />
 </div>
 
@@ -23,11 +23,21 @@
   var inputText = document.getElementById("input");
 
   inputText.addEventListener("keydown", function (e) {
-    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
-        if (e.target.value == "/help" ) {
-          var child = document.getElementById('history');
-          child.innerHTML += "command> " + e.target.value + "<br />";
-        }
+    var child = document.getElementById('history');
+    var inputTxt = document.getElementById('input');
+    if (e.keyCode === 13) {  // Enter
+      if (e.target.value == "" ) {
+        child.innerHTML += "command> <br />";
+      } else if (e.target.value == "/help" ) {
+        child.innerHTML += "command> " + e.target.value + "<br />";
+      } else {
+        child.innerHTML += "command> " + e.target.value + "<br />";
+        child.innerHTML += "command not found<br />";
+      }
+      inputTxt.value = "";
+    } else if (e.ctrlKey && e.keyCode === 67) { // Ctrl + c
+      child.innerHTML += "command> <br />";
+      inputTxt.value = "";
     }
 });
 
