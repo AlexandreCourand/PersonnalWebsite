@@ -22,10 +22,12 @@
   </body>
   <script>
     function apiPost(child, command) {
-      $.post('https://api.acourand.website/' + command,
+      $.get('https://api.acourand.website/' + command,
+      "false",
       function(data) {
         child.innerHTML += data + "<br />";
-      });
+      }),
+      "text";
     }
 
     var inputText = document.getElementById("input");
